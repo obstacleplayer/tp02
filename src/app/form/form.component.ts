@@ -39,10 +39,12 @@ export class FormComponent implements OnInit {
   }
 
   sumbit(){
-    if(this.form.invalid){
+    /*if(this.form.invalid){
       alert("error");
       return;
-    }
+    }*/
+
+    console.log(this.form);
 
     this.client.firstname = this.form.controls["firstname"].value;
     this.client.lastname = this.form.controls["lastname"].value;
@@ -56,9 +58,9 @@ export class FormComponent implements OnInit {
     this.client.login = this.form.controls["login"].value;
     this.client.country = this.form.controls["country"].value;
 
-    console.log(this.client);
+
     this.subForm.emit(this.client);
     this.data.storage = this.client;
-    this.router.navigate(["recap"])
+   // this.router.navigate(["recap"])
   }
 }

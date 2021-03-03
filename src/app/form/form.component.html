@@ -1,6 +1,6 @@
 <div class='col-md-6 col-sm-4' >
   <h3>Formulaire</h3>
-  <form [formGroup]="form" (ngSubmit)='sumbit()' style="margin-left: 5vw;">
+  <div [formGroup]="form" style="margin-left: 5vw;">
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="firstname">name</label>
@@ -77,6 +77,6 @@
         <small class='error' *ngIf="form.get('password').hasError('pattern')">Veuillez entrer un mot de passe valide!</small>
       </div>
     </div>
-    <input value="Envoyer"  class="btn-primary" type="submit" />
-  </form>
+    <input value="Envoyer"  class="btn-primary" (click)="sumbit()" />
+  </div>
 </div>
