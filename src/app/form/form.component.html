@@ -1,0 +1,82 @@
+<div class='col-md-6 col-sm-4' >
+  <h3>Formulaire</h3>
+  <form [formGroup]="form" (ngSubmit)='sumbit()' style="margin-left: 5vw;">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="firstname">name</label>
+        <input id="firstname" formGroupName="firstname" type="text" name="firstname" class="form-control" />
+        <small class='error' *ngIf="form.get('firstname').hasError('pattern')">Veuillez entrer un nom valide!</small>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="lastname">prénom</label>
+        <input id="lastname" formGroupName="lastname" type="text" name="lastname" class="form-control">
+        <small class='error' *ngIf="form.get('lastname').hasError('pattern')">Veuillez entrer un prenom valide!</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label>Civilité</label>
+        <div class="custom-control custom-radio">
+          <input formControlName="civilite" type="radio" value="Monsieur">
+          <span>Monsieur</span>
+        </div>
+        <div class="custom-control custom-radio">
+          <input formControlName="civilite" type="radio" value="Madame">
+          <span>Madame</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="tel">phone</label>
+        <input id="tel" formControlName="tel" name="tel" type="tel" class="form-control">
+        <small class='error' *ngIf="form.get('tel').hasError('pattern')">entrer un numéro de téléphone</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="address">Adresse</label>
+        <input id="address" formControlName="address" name="address" type="text" class="form-control">
+        <small class='error' *ngIf="form.get('address').hasError('pattern')">entrer une adresse valide!</small>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label for="city">City</label>
+        <input id="city" formControlName="city" name="city" type="text" class="form-control">
+        <small class='error' *ngIf="form.get('city').hasError('pattern')">entrer un ville valide!</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="mail">mail</label>
+        <input id="mail" formControlName="mail" name="mail" type="email" class='form-control'>
+        <small class='error' *ngIf="form.get('mail').hasError('pattern')"> entrer un mail valide!</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="country">country</label>
+        <input id="country" formControlName="country" name="country" type="text" class="form-control" id="input-email">
+        <small class='error' *ngIf="form.get('country').hasError('pattern')">entrer une adresse pays valide!</small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="input-login">Login</label>
+        <input formControlName="login" name="login" type="text" class="form-control" id="input-login">
+        <small class='error' *ngIf="form.get('login').hasError('pattern')">Veuillez entrer un login valide!</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="input-password">Password</label>
+        <input formControlName="password" name="password" type="password" class="form-control" id="input-password">
+        <small class='error' *ngIf="form.get('password').hasError('pattern')">Veuillez entrer un mot de passe valide!</small>
+      </div>
+    </div>
+    <input value="Envoyer"  class="btn-primary" type="submit" />
+  </form>
+</div>
