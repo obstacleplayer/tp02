@@ -1,0 +1,15 @@
+
+<app-filter-products (filter)="searchByName($event)"></app-filter-products>
+<div class="clr-row">
+  <div class="clr-col-lg-5 clr-col-md-8 clr-col-12">
+    <div class="card">
+          <div *ngFor="let i of productsFilter">
+              <div class="card-header">
+                <h1 class="card-title">{{i.name}} ({{i.category}})</h1>
+              </div>
+              <p class="card"> taille: {{i.size}} <br/> Price: {{i.price}}euros</p>
+          </div>
+      </div>
+  </div>
+</div>
+<div *ngIf="isEmpty" class="alert alert-danger">aucun produit</div>

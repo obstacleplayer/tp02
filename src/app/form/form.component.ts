@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
-import {Client} from '../client';
+import {Client} from '../model/client';
 import {Data} from './provider'
 
 @Component({
@@ -11,8 +11,8 @@ import {Data} from './provider'
 })
 export class FormComponent implements OnInit {
 
-  isSend : boolean = false;
-  form : FormGroup;
+  isSend = false;
+  form: FormGroup;
   @Input() client: Client;
   @Output() subForm: EventEmitter<Client> = new EventEmitter<Client>();
 
@@ -23,11 +23,11 @@ export class FormComponent implements OnInit {
       firstname: new FormControl('',[Validators.required, Validators.pattern('^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]')]),
       lastname: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z]*$')]),
       address: new FormControl('',[Validators.required]),
-      postalCode: new FormControl('',[Validators.required, Validators.pattern("[0-9]*$")]),
+      postalCode: new FormControl('',[Validators.required, Validators.pattern('[0-9]*$')]),
       city: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z]*$')]),
       tel: new FormControl('',[Validators.required, Validators.pattern('[0-9]{10}$')]),
       mail: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$')]),
-      civilite: new FormControl('',[Validators.required]),
+      civilite: new FormControl('', [Validators.required]),
       password: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z]*$')]),
       login: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z]*$')]),
       country: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z]*$')])
@@ -39,10 +39,7 @@ export class FormComponent implements OnInit {
   }
 
   sumbit(){
-    /*if(this.form.invalid){
-      alert("error");
-      return;
-    }*/
+
 
     console.log(this.form);
 

@@ -8,10 +8,13 @@ import { FormComponent } from './form/form.component';
 import { RecapComponent } from './recap/recap.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {Data} from './form/provider';
-import { PhonePipe } from './phone.pipe'
+import { PhonePipe } from './phone.pipe';
+import { FilterProductsComponent } from './filter-products/filter-products.component';
+import { ListProductsComponent } from './list-products/list-products.component'
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -21,14 +24,18 @@ import { PhonePipe } from './phone.pipe'
     TetiereComponent,
     FormComponent,
     RecapComponent,
-    PhonePipe
+    PhonePipe,
+    FilterProductsComponent,
+    ListProductsComponent
   ],
     imports: [
         BrowserModule,
         ClarityModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule
     ],
   providers: [Data],
   bootstrap: [AppComponent]

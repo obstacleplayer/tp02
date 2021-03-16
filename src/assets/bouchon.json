@@ -1,0 +1,26 @@
+[
+  {
+    "name" : "chaussure puma",
+    "price" : "1000",
+    "size" : "42",
+    "category" : "chaussures"
+  },
+  {
+    "name": "Jordan x Psg",
+    "price" : "105",
+    "size" : "M",
+    "category" : "pull"
+  },
+  {
+    "name" : "Maillot adidas",
+    "price" : "80",
+    "size" : "L",
+    "category" : "t-shirt"
+  },
+  {
+    "name": "Short nike",
+    "price" : "25",
+    "size" : "36",
+    "category" : "short"
+  }
+]
