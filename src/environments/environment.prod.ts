@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  products : '/assets/bouchon.json'
+
 };
