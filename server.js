@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/dist/tp'));
 
 app.get('/*', function(req,res) {
 
-res.sendFile(path.join(__dirname+'/dist/tp02/index.html'));
+res.sendFile(path.join(__dirname+'/dist/tp/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
