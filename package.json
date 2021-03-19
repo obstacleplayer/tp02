@@ -25,6 +25,7 @@
     "@cds/core": "5.0.2",
     "@clr/angular": "5.0.2",
     "@clr/ui": "5.0.2",
+    "@ngrx/store": "^11.0.1",
     "@ngxs/store": "^3.7.1",
     "core-js": "3.6.5",
     "express": "4.17.1",
