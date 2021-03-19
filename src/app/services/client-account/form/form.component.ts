@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
-import {Client} from '../model/client';
+import {ClientModel} from '../../../../models/client.model';
 import {Data} from './provider'
 
 @Component({
@@ -13,8 +13,8 @@ export class FormComponent implements OnInit {
 
   isSend = false;
   form: FormGroup;
-  @Input() client: Client;
-  @Output() subForm: EventEmitter<Client> = new EventEmitter<Client>();
+  @Input() client: ClientModel;
+  @Output() subForm: EventEmitter<ClientModel> = new EventEmitter<ClientModel>();
 
 
   constructor(private router: Router, private data: Data)
@@ -35,7 +35,7 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.client = new Client();
+    this.client = new ClientModel();
   }
 
   sumbit(){

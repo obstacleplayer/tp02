@@ -3,24 +3,28 @@
     "name" : "chaussure puma",
     "price" : "1000",
     "size" : "42",
-    "category" : "chaussures"
+    "category" : "chaussures",
+    "source" : "puma_shoes.png"
   },
   {
     "name": "Jordan x Psg",
     "price" : "105",
     "size" : "M",
-    "category" : "pull"
+    "category" : "pull",
+    "source" : "JordanxParis.png"
   },
   {
     "name" : "Maillot adidas",
     "price" : "80",
     "size" : "L",
-    "category" : "t-shirt"
+    "category" : "t-shirt",
+    "source" : "adidas.png"
   },
   {
     "name": "Short nike",
     "price" : "25",
     "size" : "36",
-    "category" : "short"
+    "category" : "short",
+    "source" : "shortNike.png"
   }
 ]

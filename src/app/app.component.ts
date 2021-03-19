@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Client} from './model/client';
+import {ClientModel} from '../models/client.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'tp02';
 
 
-  client: Client = new Client();
+  client: ClientModel = new ClientModel();
 
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Client} from '../model/client';
+import {ClientModel} from '../../../../models/client.model';
 import {Data} from '../form/provider';
 
 @Component({
@@ -9,7 +9,7 @@ import {Data} from '../form/provider';
 })
 export class RecapComponent implements OnInit {
 
-  client: Client;
+  client: ClientModel;
 
   constructor(private data: Data)
   {

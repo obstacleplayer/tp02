@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {FormComponent} from './form/form.component';
-import {RecapComponent} from "./recap/recap.component";
-import {ListProductsComponent} from "./list-products/list-products.component";
+import {FormComponent} from './services/client-account/form/form.component';
+import {RecapComponent} from "./services/client-account/recap/recap.component";
+import {ListProductsComponent} from "./services/catalogue/list-products/list-products.component";
 
 const route: Routes = [
   {path: "", component: FormComponent},
