@@ -7,10 +7,14 @@ import {ClientModel} from '../models/client.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tp02';
+  title = 'tp04';
 
 
   client: ClientModel = new ClientModel();
+
+  onClientRegister(client: ClientModel){
+    this.client = client
+  }
 
 
 }

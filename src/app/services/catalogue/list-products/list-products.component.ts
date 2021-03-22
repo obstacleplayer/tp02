@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Produit} from "../../../../models/product.model";
 import {ListProductsService} from "./list-products.service";
+import {AddProduct} from "../../../../../shared/action/AddProduct.action";
+import {Store} from "@ngxs/store";
 
 @Component({
   selector: 'app-list-products',
@@ -14,7 +16,7 @@ export class ListProductsComponent implements OnInit {
   public isEmpty: boolean = false;
   @Input() filter: String;
 
-  constructor(public listProductsService : ListProductsService) { }
+  constructor(public listProductsService : ListProductsService, private store: Store) { }
 
   ngOnInit()  {
     this.listProductsService.getProducts().subscribe(response =>{
@@ -48,4 +50,11 @@ export class ListProductsComponent implements OnInit {
 
   }
 
+  addClick(id, name, price, size, category, source){
+    this.addProduct(id, name, price, size, category, source)
+  }
+
+  private addProduct(id, name, price, size, category, source) {
+    this.store.dispatch(new AddProduct({id, name, price, size, category, source}));
+  }
 }

@@ -1,15 +1,26 @@
-
+<h1 class="title">Catalogue</h1>
 <app-filter-products (filter)="searchByName($event)"></app-filter-products>
 <div class="clr-row">
-  <div class="clr-col-lg-5 clr-col-md-8 clr-col-12">
-    <div class="card">
-          <div *ngFor="let i of productsFilter">
-              <div class="card-header">
-                <h1 class="card-title">{{i.name}} ({{i.category}})</h1>
-              </div>
-              <p class="card"> taille: {{i.size}} <br/> Price: {{i.price}}euros</p>
-          </div>
+  <div class="clr-col-sm-2 clr-col-4">
+    <div  class="card" *ngFor="let i of productsFilter"><br>
+      <div class="card-img">
+        <img id="image_product" src="../../../../assets/img/{{i.source}}" alt="images" />
       </div>
+      <div class="card-block">
+        <h4 class="card-title">{{i.name}}</h4>
+      </div>
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item">Prix : {{i.price}} euros</li>
+          <li class="list-group-item">Catégorie : {{i.category}}</li>
+          <li class="list-group-item">Taille : {{i.size}}</li>
+        </ul>
+      </div>
+      <div>
+        <button  [routerLink]="['detail', i.id]" type="button" class="btn btn-info-outline">details</button>
+        <button  (click)="addClick(i.id, i.name, i.price, i.category, i.size,i.source)" class="btn btn-success">Add Panier</button>
+      </div>
+    </div>
   </div>
 </div>
 <div *ngIf="isEmpty" class="alert alert-danger">aucun produit</div>

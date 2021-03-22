@@ -1,1 +1,17 @@
-<p>basket works!</p>
+<h1 class="card-title">Panier</h1>
+<div class="card" *ngFor="let i of article | async">
+ <div class="clr-row">
+   <div class="card-media-block">
+    <a href="assets/img/{{i.source}}">
+     <img class="card-media-image" src="../../../../assets/img/{{i.source}}" alt="card image">
+    </a>
+   </div>
+   <div class="card-block " >
+     <h5 class="card-text"> nom : {{i.name}}</h5>
+     <h6 class="card-text"> type :{{i.size}}</h6>
+     <h6 class="card-text"> taille : {{i.category}}</h6>
+     <button (click)="delClick(i)" type="button" class="btn btn-danger-outline">Supprimer</button>
+   </div>
+ </div>
+</div>
+<div *ngIf="isEmpty" class="alert alert-danger">le panier est vide</div>

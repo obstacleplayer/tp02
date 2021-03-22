@@ -1,0 +1,9 @@
+<div class="main-container">
+  <h2>detail</h2>
+  <img class="image" src="../../../../../assets/img/{{selectProduct.source}}">
+  <p>catégorie : {{selectProduct.category}}</p>
+  <p>nom : {{selectProduct.name}}</p>
+  <p>prix : {{selectProduct.price}}</p>
+  <p>size : {{selectProduct.size}}</p>
+  <button class=" btn btn-primary" (click)="addClick(selectProduct.id, selectProduct.name, selectProduct.price, selectProduct.category, selectProduct.size, selectProduct.source)">ajouter au panier</button>
+</div>

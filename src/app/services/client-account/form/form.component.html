@@ -1,27 +1,25 @@
 <div class='col-md-6 col-sm-4' >
   <h3>Formulaire</h3>
-  <div [formGroup]="form" style="margin-left: 5vw;">
+  <form clrForm [formGroup]="form" (ngSubmit)="sumbit()">
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="firstname" class="clr-control-label">name</label>
-        <input id="firstname" formGroupName="firstname" type="text" name="firstname" class="clr-input" />
-        <small class='error' *ngIf="form.get('firstname').hasError('pattern')">Veuillez entrer un nom valide!</small>
+        <input id="firstname" formControlName="firstname" type="text" name="firstname" class="clr-input" />
+        <small class='alert alert-danger' *ngIf="form.get('firstname').hasError('pattern')">Veuillez entrer un nom valide!</small>
       </div>
       <div class="col-md-4 mb-3">
         <label for="lastname" class="clr-control-label" >prénom</label>
-        <input id="lastname" formGroupName="lastname" type="text" name="lastname" class="clr-input">
-        <small class='error' *ngIf="form.get('lastname').hasError('pattern')">Veuillez entrer un prenom valide!</small>
+        <input id="lastname" formControlName="lastname" type="text" name="lastname" class="clr-input">
+        <small class='alert alert-danger' *ngIf="form.get('lastname').hasError('pattern')">Veuillez entrer un prenom valide!</small>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-12 mb-3">
-        <label class="clr-control-label">civilité</label>
-        <div class="clr-select-wrapper">
-          <select placeholder="Select Option" id="example2">
+        <label class="clr-control-label">Choose your gender </label>
+          <select  formControlName="civilite" placeholder="Select Option" id="civilite">
             <option formControlName="civilite">Monsieur</option>
             <option formControlName="civilite">Madame</option>
           </select>
-        </div>
       </div>
     </div>
 
@@ -29,7 +27,7 @@
       <div class="col-md-12 mb-3">
         <label for="tel" class="clr-control-label">phone</label>
         <input id="tel" formControlName="tel" name="tel" type="tel" class="clr-input">
-        <small class='error' *ngIf="form.get('tel').hasError('pattern')">entrer un numéro de téléphone</small>
+        <small class='alert alert-danger' *ngIf="form.get('tel').hasError('pattern')">entrer un numéro de téléphone</small>
       </div>
     </div>
 
@@ -37,27 +35,40 @@
       <div class="col-md-6 mb-3">
         <label for="address" class="clr-control-label">Adresse</label>
         <input id="address" formControlName="address" name="address" type="text" class="clr-input">
-        <small class='error' *ngIf="form.get('address').hasError('pattern')">entrer une adresse valide!</small>
+        <small class='alert alert-danger' *ngIf="form.get('address').hasError('pattern')">entrer une adresse valide!</small>
       </div>
+    </div>
 
+    <div class="form-row">
       <div class="col-md-3 mb-3">
         <label for="city" class="clr-control-label" >City</label>
         <input id="city" formControlName="city" name="city" type="text" class="clr-input">
-        <small class='error' *ngIf="form.get('city').hasError('pattern')">entrer un ville valide!</small>
+        <small class='alert alert-danger' *ngIf="form.get('city').hasError('pattern')">entrer un ville valide!</small>
       </div>
     </div>
+
+    <div class="form-row">
+      <div class="col-md-3 mb-3">
+        <label for="city" class="clr-control-label" >code postal</label>
+        <input id="postalCode" formControlName="postalCode" name="postalCode" type="text" class="clr-input">
+        <small class='alert alert-danger' *ngIf="form.get('postalCode').hasError('pattern')">entrer un code postal valide!</small>
+      </div>
+    </div>
+
+
     <div class="form-row">
       <div class="col-md-12 mb-3">
         <label for="mail" class="clr-control-label">mail</label>
         <input id="mail" formControlName="mail" name="mail" type="email" class="clr-input">
-        <small class='error' *ngIf="form.get('mail').hasError('pattern')"> entrer un mail valide!</small>
+        <small class='alert alert-danger' *ngIf="form.get('mail').hasError('pattern')"> entrer un mail valide!</small>
       </div>
     </div>
+
     <div class="form-row">
       <div class="col-md-12 mb-3">
         <label for="country" class="clr-control-label">country</label>
-        <input id="country" formControlName="country" name="country" type="text" class="clr-input" id="input-email">
-        <small class='error' *ngIf="form.get('country').hasError('pattern')">entrer une adresse pays valide!</small>
+        <input id="country" formControlName="country" name="country" type="text" class="clr-input" >
+        <small class='alert alert-danger' *ngIf="form.get('country').hasError('pattern')">entrer une adresse pays valide!</small>
       </div>
     </div>
 
@@ -65,16 +76,18 @@
       <div class="col-md-12 mb-3">
         <label for="input-login" class="clr-control-label">Login</label>
         <input formControlName="login" name="login" type="text" class="clr-input" id="input-login">
-        <small class='error' *ngIf="form.get('login').hasError('pattern')">Veuillez entrer un login valide!</small>
+        <small class='alert alert-danger' *ngIf="form.get('login').hasError('pattern')">Veuillez entrer un login valide!</small>
       </div>
     </div>
+
     <div class="form-row">
       <div class="col-md-12 mb-3">
         <label for="input-password" class="clr-control-label">Password</label>
         <input formControlName="password" name="password" type="password" class="form-control" id="input-password">
-        <small class='error' *ngIf="form.get('password').hasError('pattern')">Veuillez entrer un mot de passe valide!</small>
+        <small class='alert alert-danger' *ngIf="form.get('password').hasError('pattern')">Veuillez entrer un mot de passe valide!</small>
       </div>
     </div>
-    <button  class="btn btn-primary" (click)="sumbit()">Envoyer</button>
-  </div>
+
+    <button  class="btn btn-primary">Envoyer</button>
+  </form>
 </div>
