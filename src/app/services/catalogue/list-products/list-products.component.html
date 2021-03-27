@@ -1,26 +1,47 @@
-<h1 class="title">Catalogue</h1>
 <app-filter-products (filter)="searchByName($event)"></app-filter-products>
-<div class="clr-row">
-  <div class="clr-col-sm-2 clr-col-4">
-    <div  class="card" *ngFor="let i of productsFilter"><br>
-      <div class="card-img">
-        <img id="image_product" src="../../../../assets/img/{{i.source}}" alt="images" />
-      </div>
-      <div class="card-block">
-        <h4 class="card-title">{{i.name}}</h4>
-      </div>
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item">Prix : {{i.price}} euros</li>
-          <li class="list-group-item">Catégorie : {{i.category}}</li>
-          <li class="list-group-item">Taille : {{i.size}}</li>
-        </ul>
-      </div>
-      <div>
-        <button  [routerLink]="['detail', i.id]" type="button" class="btn btn-info-outline">details</button>
-        <button  (click)="addClick(i.id, i.name, i.price, i.category, i.size,i.source)" class="btn btn-success">Add Panier</button>
+<div class="center-container">
+<div class="container-fluid">
+  <div
+    id="card-item"
+    class="d-inline-block card"
+    *ngFor="let i of productsFilter"
+  >
+    <img
+      id="img-block"
+      class="card-img-top"
+      src="../../../../assets/img/{{ i.source }}"
+      alt="Card image cap"
+    />
+    <div class="card-body" id="body-card">
+      <h5 class="card-title">{{ i.name }}</h5>
+      <ul class="list-group">
+        <li class="list-group-item">Prix : {{ i.price }} euros</li>
+        <li class="list-group-item">Catégorie : {{ i.category }}</li>
+        <li class="list-group-item">Taille : {{ i.size }}</li>
+      </ul>
+      <div class="align-button">
+        <div>
+          <button
+            [routerLink]="['detail', i.id]"
+            id="Button-Detail"
+            type="button"
+            class="btn btn-primary me-md-2 float-left position-top-button button"
+          >
+            Detail
+          </button>
+          <button
+            (click)="
+              addClick(i.id, i.name, i.price, i.category, i.size, i.source)
+            "
+            id="Button-Panier"
+            type="button"
+            class="btn btn-primary float-right position-top-button button"
+          >
+            Add Panier
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div *ngIf="isEmpty" class="alert alert-danger">aucun produit</div>
+</div>

@@ -1,32 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from "@angular/router";
-import {DetailProductComponent} from "./detail-product/detail-product.component";
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
+import { RouterModule, Routes } from '@angular/router';
+import { DetailProductComponent } from './detail-product/detail-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
     path: '',
-    component: DetailProductComponent
-  }
+    component: DetailProductComponent,
+  },
 ];
 
 @NgModule({
-  declarations:
-    [
-      DetailProductComponent
-    ],
+  declarations: [DetailProductComponent],
   imports: [
     RouterModule.forChild(routes),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
   ],
-  exports:[
-    RouterModule
-  ]
+  exports: [RouterModule],
 })
-export class DetailProductModule { }
+export class DetailProductModule {}

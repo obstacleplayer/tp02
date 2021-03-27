@@ -1,34 +1,34 @@
 [
   {
     "id": "1",
-    "name" : "chaussure",
+    "name" : "chaussure puma",
     "price" : "1000",
     "size" : "42",
     "category" : "chaussures",
-    "source" : "chaussure.webp"
+    "source" : "puma_shoes.PNG"
   },
   {
     "id": "2",
-    "name": "pull",
+    "name": "Jordan x Psg",
     "price" : "105",
     "size" : "M",
     "category" : "pull",
-    "source" : "pull.webp"
+    "source" : "JordanxParis.PNG"
   },
   {
     "id": "3",
-    "name" : "maillot",
+    "name" : "Maillot adidas",
     "price" : "80",
-    "size" : "S",
+    "size" : "L",
     "category" : "t-shirt",
-    "source" : "t-shirt.webp"
+    "source" : "adidas.PNG"
   },
   {
     "id": "4",
-    "name": "short",
+    "name": "Short nike",
     "price" : "25",
     "size" : "36",
     "category" : "short",
-    "source" : "short.webp"
+    "source" : "shortNike.PNG"
   }
 ]

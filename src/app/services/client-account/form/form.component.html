@@ -1,93 +1,185 @@
-<div class='col-md-6 col-sm-4' >
-  <h3>Formulaire</h3>
-  <form clrForm [formGroup]="form" (ngSubmit)="sumbit()">
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="firstname" class="clr-control-label">name</label>
-        <input id="firstname" formControlName="firstname" type="text" name="firstname" class="clr-input" />
-        <small class='alert alert-danger' *ngIf="form.get('firstname').hasError('pattern')">Veuillez entrer un nom valide!</small>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="lastname" class="clr-control-label" >prénom</label>
-        <input id="lastname" formControlName="lastname" type="text" name="lastname" class="clr-input">
-        <small class='alert alert-danger' *ngIf="form.get('lastname').hasError('pattern')">Veuillez entrer un prenom valide!</small>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label class="clr-control-label">Choose your gender </label>
-          <select  formControlName="civilite" placeholder="Select Option" id="civilite">
-            <option formControlName="civilite">Monsieur</option>
-            <option formControlName="civilite">Madame</option>
-          </select>
-      </div>
-    </div>
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <form
+      class="contact100-form validate-form"
+      [formGroup]="form"
+      (ngSubmit)="sumbit()"
+    >
+      <span class="contact100-form-title"> Sign in </span>
 
-    <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label for="tel" class="clr-control-label">phone</label>
-        <input id="tel" formControlName="tel" name="tel" type="tel" class="clr-input">
-        <small class='alert alert-danger' *ngIf="form.get('tel').hasError('pattern')">entrer un numéro de téléphone</small>
+      <div class="row" id="row-form">
+        <div class="col-md-6" id="form-right">
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="firstname"
+              formControlName="firstname"
+              type="text"
+              name="name"
+              placeholder="Name"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('firstname').hasError('pattern')"
+            >Veuillez entrer un nom valide!</small
+          >
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="lastname"
+              formControlName="lastname"
+              type="text"
+              name="lastname"
+              placeholder="lastname"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('lastname').hasError('pattern')"
+            >Veuillez entrer un prénom valide!</small
+          >
+
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="tel"
+              formControlName="tel"
+              type="text"
+              name="tel"
+              placeholder="tel"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('tel').hasError('pattern')"
+            >Veuillez entrer un numéro de téléphone valide!</small
+          >
+
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="address"
+              formControlName="address"
+              type="text"
+              name="address"
+              placeholder="address"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('address').hasError('pattern')"
+            >Veuillez entrer une address valide!</small
+          >
+
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="city"
+              formControlName="city"
+              type="text"
+              name="city"
+              placeholder="city"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('city').hasError('pattern')"
+            >Veuillez entrer une ville valide!</small
+          >
+        </div>
+        <div class="col-md-6" id="form-left">
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="mail"
+              formControlName="mail"
+              type="text"
+              name="mail"
+              placeholder="mail"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('mail').hasError('pattern')"
+            >Veuillez entrer un mail valide!</small
+          >
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="country"
+              formControlName="country"
+              type="text"
+              name="country"
+              placeholder="country"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('country').hasError('pattern')"
+            >Veuillez entrer un pays valide!</small
+          >
+
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="login"
+              formControlName="login"
+              type="text"
+              name="login"
+              placeholder="login"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('login').hasError('pattern')"
+            >Veuillez entrer un prénom valide!</small
+          >
+
+          <div class="wrap-input100">
+            <input
+              class="input100"
+              id="password"
+              formControlName="password"
+              type="text"
+              name="password"
+              placeholder="password"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <small
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="form.get('password').hasError('pattern')"
+            >Veuillez entrer un mot de pass valide!</small
+          >
+        </div>
       </div>
-    </div>
 
-    <div class="form-row">
-      <div class="col-md-6 mb-3">
-        <label for="address" class="clr-control-label">Adresse</label>
-        <input id="address" formControlName="address" name="address" type="text" class="clr-input">
-        <small class='alert alert-danger' *ngIf="form.get('address').hasError('pattern')">entrer une adresse valide!</small>
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" (click)="sumbit()">
+          <span>
+            <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+            Send
+          </span>
+        </button>
       </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-3 mb-3">
-        <label for="city" class="clr-control-label" >City</label>
-        <input id="city" formControlName="city" name="city" type="text" class="clr-input">
-        <small class='alert alert-danger' *ngIf="form.get('city').hasError('pattern')">entrer un ville valide!</small>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-3 mb-3">
-        <label for="city" class="clr-control-label" >code postal</label>
-        <input id="postalCode" formControlName="postalCode" name="postalCode" type="text" class="clr-input">
-        <small class='alert alert-danger' *ngIf="form.get('postalCode').hasError('pattern')">entrer un code postal valide!</small>
-      </div>
-    </div>
-
-
-    <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label for="mail" class="clr-control-label">mail</label>
-        <input id="mail" formControlName="mail" name="mail" type="email" class="clr-input">
-        <small class='alert alert-danger' *ngIf="form.get('mail').hasError('pattern')"> entrer un mail valide!</small>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label for="country" class="clr-control-label">country</label>
-        <input id="country" formControlName="country" name="country" type="text" class="clr-input" >
-        <small class='alert alert-danger' *ngIf="form.get('country').hasError('pattern')">entrer une adresse pays valide!</small>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label for="input-login" class="clr-control-label">Login</label>
-        <input formControlName="login" name="login" type="text" class="clr-input" id="input-login">
-        <small class='alert alert-danger' *ngIf="form.get('login').hasError('pattern')">Veuillez entrer un login valide!</small>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-12 mb-3">
-        <label for="input-password" class="clr-control-label">Password</label>
-        <input formControlName="password" name="password" type="password" class="form-control" id="input-password">
-        <small class='alert alert-danger' *ngIf="form.get('password').hasError('pattern')">Veuillez entrer un mot de passe valide!</small>
-      </div>
-    </div>
-
-    <button  class="btn btn-primary">Envoyer</button>
-  </form>
+    </form>
+  </div>
 </div>

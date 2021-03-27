@@ -1,14 +1,22 @@
-<div class=" header header-2">
-    <div class="branding">
-      <a class="title" [routerLink]="['/']" routerLinkActive="active">Home</a>
-    </div>
-    <div class="branding">
-      <a class="title" [routerLink]="['profile']" routerLinkActive="active">espace client</a>
-    </div>
-    <div class="branding">
-      <a class="title" [routerLink]="['catalogue']" routerLinkActive="active">Catalogue</a>
-    </div>
-    <div class="branding">
-        <a class="title" [routerLink]="['panier']" routerLinkActive="active"> Panier ({{numberProduct}})</a>
-    </div>
-</div>
+<nav id="navbar-color" class="navbar navbar-expand-lg navbar-light fixed-top">
+  <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active">Home</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['profile']" routerLinkActive="active"
+        >espace client</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['catalogue']" routerLinkActive="active"
+        >Catalogue</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['panier']" routerLinkActive="active">
+          Panier ({{ numberProduct }})</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
