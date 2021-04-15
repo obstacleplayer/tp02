@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { BasketState } from '../../shared/states/basket.state';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
       ),
   },
   {
+    path:'login',
+    component: LoginComponent
+  },
+  {
     path: 'panier',
     loadChildren: () =>
       import('./services/basket/basket.module').then((i) => i.BasketModule),
@@ -44,6 +49,7 @@ const routes: Routes = [
     FooterComponent,
     TetiereComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

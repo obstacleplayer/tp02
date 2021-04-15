@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{okHS:function(n,o,t){"use strict";t.d(o,"a",function(){return r});var c=t("fXoL");let r=(()=>{class n{constructor(){}}return n.\u0275fac=function(o){return new(o||n)},n.\u0275prov=c.Fb({token:n,factory:n.\u0275fac}),n})()}}]);
