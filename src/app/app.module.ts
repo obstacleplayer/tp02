@@ -58,6 +58,7 @@ const routes: Routes = [
     NgxsModule.forRoot([BasketState]),
     RouterModule.forRoot(routes),
     FontAwesomeModule,
+    FormsModule,
   ],
   exports: [RouterModule],
   bootstrap: [AppComponent],

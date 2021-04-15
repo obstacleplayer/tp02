@@ -10,13 +10,11 @@ import {FormsLoginService} from "../forms-login.service";
 })
 export class LoginComponent implements OnInit {
 
-  forms: FormGroup;
+  login : string = "";
+  password: string = "";
 
   constructor(private formsLoginService : FormsLoginService) {
-    this.forms = new FormGroup({
-      login: new FormControl(),
-      password: new FormControl()
-    });
+
   }
 
   ngOnInit(){
@@ -24,7 +22,9 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(){
-    this.formsLoginService.login(this.forms)
+    console.log (this.login + " " + this.password);
+    this.formsLoginService.login (this.login,this.password).subscribe (flux => console.log (flux));
   }
+
 
 }

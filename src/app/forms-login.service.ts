@@ -9,14 +9,14 @@ import {FormsModule} from "@angular/forms";
 export class FormsLoginService {
 
 
-  private forms: FormsModule;
+
 
   constructor(private httpClient : HttpClient ) { }
 
-  public login( forms ) :   Observable<any> {
+  public login(login : string, password : string) :   Observable<any> {
     let httpOptions = {
       headers :  new HttpHeaders ({'Content-Type':'application/json'})};
 
-    return this.httpClient.post<any> ("/api/users/login",{"login":forms.login,"password":forms.password},httpOptions);
+    return this.httpClient.post<any> ("/api/users/login",{"login":login,"password":password},httpOptions);
   }
 }
